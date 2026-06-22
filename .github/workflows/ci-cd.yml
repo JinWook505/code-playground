@@ -12,11 +12,11 @@ on:
       - develop
 
 env:
-  AWS_REGION: us-east-1
-  AWS_ACCOUNT_ID: 851725513597
-  ECR_REGISTRY: 851725513597.dkr.ecr.us-east-1.amazonaws.com
-  BACKEND_IMAGE: 851725513597.dkr.ecr.us-east-1.amazonaws.com/code-playground-backend
-  FRONTEND_IMAGE: 851725513597.dkr.ecr.us-east-1.amazonaws.com/code-playground-frontend
+  AWS_REGION: ap-northeast-2
+  AWS_ACCOUNT_ID: 077509725646
+  ECR_REGISTRY: 077509725646.dkr.ecr.ap-northeast-2.amazonaws.com
+  BACKEND_IMAGE: 077509725646.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-backend
+  FRONTEND_IMAGE: 077509725646.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-frontend
   ECS_CLUSTER: code-playground-production
 
 jobs:

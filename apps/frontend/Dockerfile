@@ -52,8 +52,10 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
 # Entrypoint 스크립트 복사
+# CRLF(\r) 줄바꿈이 섞여 있어도 LF로 정리한 뒤 실행 권한 부여
 COPY docker-entrypoint.sh ./
-RUN chmod +x docker-entrypoint.sh
+RUN sed -i 's/\r$//' docker-entrypoint.sh \
+    && chmod +x docker-entrypoint.sh
 
 # 권한 설정
 RUN chown -R nextjs:nodejs /app

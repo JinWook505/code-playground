@@ -17,11 +17,8 @@ COPY gradlew ./
 COPY gradle gradle/
 COPY build.gradle settings.gradle checkstyle.xml ./
 
-# Make gradlew executable
-RUN chmod +x ./gradlew
-
-# Download dependencies (separate layer for better caching)
-RUN ./gradlew dependencies --no-daemon
+# Fix CRLF line endings (Windows checkout issue) & make gradlew executable
+RUN sed -i 's/\r$//' gradlew && chmod +x ./gradlew
 
 # Copy source code
 COPY src src/

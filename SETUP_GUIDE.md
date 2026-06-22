@@ -187,8 +187,8 @@ database_username = "codeplayground_admin"
 database_password = "ChangeMeInProduction123!"
 
 # ECS 설정 (이미지 URL은 나중에 업데이트)
-backend_image        = "851725513597.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-backend:latest"
-frontend_image       = "851725513597.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-frontend:latest"
+backend_image        = "077509725646.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-backend:latest"
+frontend_image       = "077509725646.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-frontend:latest"
 backend_cpu          = 512
 backend_memory       = 1024
 frontend_cpu         = 256
@@ -228,7 +228,7 @@ terraform output
 
 ### 1. ECR 로그인
 ```bash
-aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 851725513597.dkr.ecr.ap-northeast-2.amazonaws.com
+aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 077509725646.dkr.ecr.ap-northeast-2.amazonaws.com
 ```
 
 ### 2. Frontend 이미지 빌드 및 푸시
@@ -238,10 +238,10 @@ cd apps/frontend
 # x86_64 아키텍처로 빌드 (ECS Fargate 호환)
 docker build --platform linux/amd64 \
   --build-arg NEXT_PUBLIC_API_BASE_URL=http://[ALB_DNS_NAME]/api/v1 \
-  -t 851725513597.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-frontend:latest .
+  -t 077509725646.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-frontend:latest .
 
 # ECR에 푸시
-docker push 851725513597.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-frontend:latest
+docker push 077509725646.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-frontend:latest
 ```
 
 ### 3. Backend 이미지 빌드 및 푸시
@@ -250,10 +250,10 @@ cd apps/backend
 
 # x86_64 아키텍처로 빌드
 docker build --platform linux/amd64 \
-  -t 851725513597.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-backend:latest .
+  -t 077509725646.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-backend:latest .
 
 # ECR에 푸시
-docker push 851725513597.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-backend:latest
+docker push 077509725646.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-backend:latest
 ```
 
 ### 4. ECS 서비스 업데이트
@@ -276,7 +276,7 @@ terraform apply
 **2. ECR 푸시 권한 오류**
 ```bash
 # ECR 로그인 재실행
-aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 851725513597.dkr.ecr.ap-northeast-2.amazonaws.com
+aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 077509725646.dkr.ecr.ap-northeast-2.amazonaws.com
 ```
 
 **3. Frontend API 호출 실패**

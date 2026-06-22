@@ -51,7 +51,7 @@ jwt_secret = "CHANGE_ME_TO_SECURE_JWT_SECRET"  # ⚠️ MUST CHANGE for producti
 
 # SSL Certificates (Optional - uncomment and configure if you have ACM certificates)
 # ssl_certificate_arn = "arn:aws:acm:ap-northeast-2:YOUR_ACCOUNT:certificate/YOUR_CERTIFICATE_ID"
-# cloudfront_certificate_arn = "arn:aws:acm:us-east-1:YOUR_ACCOUNT:certificate/YOUR_CERTIFICATE_ID"
+# cloudfront_certificate_arn = "arn:aws:acm:ap-northeast-2:YOUR_ACCOUNT:certificate/YOUR_CERTIFICATE_ID"
 
 # ================================================================
 # QUICK SETUP GUIDE:

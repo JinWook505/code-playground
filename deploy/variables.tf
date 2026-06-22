@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region"
   type        = string
-  default     = "us-east-1"
+  default     = "ap-northeast-2"
 }
 
 variable "environment" {
@@ -32,7 +32,7 @@ variable "vpc_cidr" {
 variable "availability_zones" {
   description = "Availability zones"
   type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
+  default     = ["ap-northeast-2a", "ap-northeast-2b"]
 }
 
 variable "public_subnets" {
@@ -147,7 +147,7 @@ variable "ssl_certificate_arn" {
 }
 
 variable "cloudfront_certificate_arn" {
-  description = "SSL certificate ARN for CloudFront (must be in us-east-1)"
+  description = "SSL certificate ARN for CloudFront (must be in ap-northeast-2)"
   type        = string
   default     = ""
 }

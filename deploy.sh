@@ -16,7 +16,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-REGION="us-east-1"
+REGION="ap-northeast-2"
 PROJECT_NAME="code-playground"
 
 # Print colored output
